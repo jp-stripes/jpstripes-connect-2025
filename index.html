@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP_Stripes Connect 2025 - 理論と実践、そして未来</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #635bff;
+            --primary-dark: #4338ca;
+            --primary-light: #818cf8;
+            --dark: #0f0f0f;
+            --light: #ffffff;
+            --gray: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        /* カスタムカーソル */
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(1.5);
+            background: var(--primary);
+        }
+
+        /* ヒーロー */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .gradient-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float-sphere 20s ease-in-out infinite;
+        }
+
+        .sphere-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            top: -200px;
+            left: -200px;
+        }
+
+        .sphere-2 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .sphere-3 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        @keyframes float-sphere {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .date-ticker {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            opacity: 0.5;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+        }
+
+        .title-wrapper {
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .title-line {
+            display: block;
+            transform: translateY(100%);
+            animation: title-slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .title-line:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .title-line:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .title-line.accent {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes title-slide-up {
+            to { transform: translateY(0); }
+        }
+
+        .tagline {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+        }
+
+        .hero-info {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            position: relative;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .catchphrase {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .catchphrase::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underline-grow 2s ease-out 1s forwards;
+        }
+
+        @keyframes underline-grow {
+            to { transform: scaleX(1); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 91, 255, 0.3);
+            border-color: var(--primary);
+        }
+
+        /* 3つのテーマセクション */
+        .themes {
+            position: relative;
+            padding: 8rem 2rem;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .themes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 91, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(99, 91, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .themes-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .themes-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #fff 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .themes-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+
+        .themes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(99, 91, 255, 0.2);
+            padding: 2px;
+        }
+
+        .theme-panel {
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            min-height: 500px;
+        }
+
+        .theme-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .theme-panel:hover::before {
+            opacity: 1;
+        }
+
+        .theme-panel:hover {
+            transform: scale(0.98);
+        }
+
+        .theme-content {
+            padding: 4rem 3rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .theme-header {
+            margin-bottom: auto;
+        }
+
+        .theme-number {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(180deg, rgba(99, 91, 255, 0.3) 0%, rgba(99, 91, 255, 0.1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .theme-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        .theme-subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            opacity: 0.4;
+            color: var(--primary-light);
+        }
+
+        .theme-visual {
+            margin: 3rem 0;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .visual-element {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        /* 理論のビジュアル - グリッド */
+        .theme-panel:nth-child(1) .visual-element::before,
+        .theme-panel:nth-child(1) .visual-element::after {
+            content: '';
+            position: absolute;
+            background: var(--primary);
+            opacity: 0.5;
+        }
+
+        .theme-panel:nth-child(1) .visual-element::before {
+            width: 100%;
+            height: 1px;
+            top: 50%;
+            left: 0;
+            box-shadow: 0 -40px 0 var(--primary), 0 40px 0 var(--primary);
+        }
+
+        .theme-panel:nth-child(1) .visual-element::after {
+            width: 1px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            box-shadow: -40px 0 0 var(--primary), 40px 0 0 var(--primary);
+        }
+
+        /* 実践のビジュアル - フロー */
+        .theme-panel:nth-child(2) .visual-element {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flow-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .flow-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+            transform: translateY(-50%);
+        }
+
+        .flow-dot:last-child::after {
+            display: none;
+        }
+
+        /* 未来のビジュアル - オービット */
+        .theme-panel:nth-child(3) .visual-element {
+            animation: rotate 20s linear infinite;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .orbit-ring:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            top: 40px;
+            left: 40px;
+        }
+
+        .orbit-ring:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .orbit-ring:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            top: 0;
+            left: 0;
+        }
+
+        .orbit-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .theme-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .theme-panel:hover .visual-element {
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .theme-panel:hover .theme-number {
+            animation: glitch-number 0.3s ease-in-out;
+        }
+
+        @keyframes glitch-number {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-1px, -1px); }
+            80% { transform: translate(1px, 1px); }
+        }
+
+        /* フューチャーセクション */
+        .future {
+            min-height: 100vh;
+            background: var(--dark);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .future-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .future-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .future-title {
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--primary) 30%, var(--primary-light) 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .future-item {
+            position: relative;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .future-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(99, 91, 255, 0.3);
+        }
+
+        .future-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .future-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* カウントダウン */
+        .countdown {
+            padding: 4rem 2rem;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .time-block {
+            text-align: center;
+            position: relative;
+        }
+
+        .time-value {
+            font-size: clamp(4rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            display: block;
+            position: relative;
+            color: var(--light);
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .time-separator {
+            font-size: 4rem;
+            font-weight: 200;
+            opacity: 0.5;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.2; }
+        }
+
+        /* フッター */
+        .footer {
+            padding: 6rem 2rem 3rem;
+            background: var(--dark);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-info {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary-light);
+            transition: width 0.3s ease;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .cursor {
+                display: none;
+            }
+
+            body {
+                cursor: default;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 12vw, 6rem);
+            }
+
+            .themes {
+                padding: 4rem 1rem;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+
+            .theme-panel {
+                min-height: 400px;
+            }
+
+            .theme-content {
+                padding: 3rem 2rem;
+            }
+
+            .theme-number {
+                font-size: 6rem;
+            }
+
+            .theme-title {
+                font-size: 2.5rem;
+            }
+
+            .theme-visual {
+                margin: 2rem 0;
+                height: 100px;
+            }
+
+            .visual-element {
+                width: 80px;
+                height: 80px;
+            }
+
+            .theme-panel:nth-child(1) .visual-element::before {
+                box-shadow: 0 -30px 0 var(--primary), 0 30px 0 var(--primary);
+            }
+
+            .theme-panel:nth-child(1) .visual-element::after {
+                box-shadow: -30px 0 0 var(--primary), 30px 0 0 var(--primary);
+            }
+
+            .flow-dot {
+                width: 15px;
+                height: 15px;
+            }
+
+            .flow-dot::after {
+                width: 25px;
+            }
+
+            .orbit-ring:nth-child(1) {
+                width: 30px;
+                height: 30px;
+                top: 25px;
+                left: 25px;
+            }
+
+            .orbit-ring:nth-child(2) {
+                width: 55px;
+                height: 55px;
+                top: 12.5px;
+                left: 12.5px;
+            }
+
+            .orbit-ring:nth-child(3) {
+                width: 80px;
+                height: 80px;
+                top: 0;
+                left: 0;
+            }
+
+            .future-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .countdown-wrapper {
+                gap: 1rem;
+            }
+
+            .time-value {
+                font-size: 3rem;
+            }
+
+            .time-separator {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- カスタムカーソル -->
+    <div class="cursor"></div>
+
+    <!-- ヒーロー -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-sphere sphere-1"></div>
+            <div class="gradient-sphere sphere-2"></div>
+            <div class="gradient-sphere sphere-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="date-ticker">2025.11.23</div>
+            
+            <div class="title-wrapper">
+                <h1 class="hero-title">
+                    <span class="title-line">JP_Stripes</span>
+                    <span class="title-line">Connect</span>
+                    <span class="title-line accent">2025</span>
+                </h1>
+            </div>
+            
+            <p class="tagline">理論と実践、そして未来</p>
+            
+            <div class="hero-info">
+                <div class="info-item">
+                    <div class="info-label">Date</div>
+                    <div class="info-value">2025.11.23 Sun</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Location</div>
+                    <div class="info-value">Yokohama</div>
+                </div>
+            </div>
+            
+            <div class="hero-tagline">
+                <div class="catchphrase">今さら聞けないを、<br>今こそ聞ける</div>
+            </div>
+            
+            <a href="#" class="cta-button">詳細は近日公開</a>
+        </div>
+    </section>
+
+    <!-- 3つのテーマ -->
+    <section class="themes">
+        <div class="themes-header">
+            <h2 class="themes-title">理論と実践、そして未来</h2>
+            <p class="themes-subtitle">Stripeで実現する、次世代の決済体験</p>
+        </div>
+        <div class="themes-container">
+            <div class="themes-grid">
+                <div class="theme-panel">
+                    <div class="theme-content">
+                        <div class="theme-header">
+                            <div class="theme-number">01</div>
+                            <h3 class="theme-title">理論</h3>
+                            <p class="theme-subtitle">Theory</p>
+                        </div>
+                        <div class="theme-visual">
+                            <div class="visual-element"></div>
+                        </div>
+                        <p class="theme-description">
+                            Stripeの全体像を体系的に理解。基礎から応用まで、ビジネスに必要な知識を段階的に習得。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="theme-panel">
+                    <div class="theme-content">
+                        <div class="theme-header">
+                            <div class="theme-number">02</div>
+                            <h3 class="theme-title">実践</h3>
+                            <p class="theme-subtitle">Practice</p>
+                        </div>
+                        <div class="theme-visual">
+                            <div class="visual-element">
+                                <div class="flow-dot"></div>
+                                <div class="flow-dot"></div>
+                                <div class="flow-dot"></div>
+                            </div>
+                        </div>
+                        <p class="theme-description">
+                            実際のビジネスでの活用事例。成功も失敗も、すべてが学びに。現場のリアルな声をお届け。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="theme-panel">
+                    <div class="theme-content">
+                        <div class="theme-header">
+                            <div class="theme-number">03</div>
+                            <h3 class="theme-title">未来</h3>
+                            <p class="theme-subtitle">Future</p>
+                        </div>
+                        <div class="theme-visual">
+                            <div class="visual-element">
+                                <div class="orbit-ring"><div class="orbit-dot"></div></div>
+                                <div class="orbit-ring"></div>
+                                <div class="orbit-ring"></div>
+                            </div>
+                        </div>
+                        <p class="theme-description">
+                            決済の未来とビジネスの可能性。新しいテクノロジーがもたらす、次世代のビジネスモデル。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フューチャー -->
+    <section class="future">
+        <div class="future-bg" id="particleContainer"></div>
+        <div class="future-content">
+            <h2 class="future-title">
+                使ってるつもり、<br>
+                から使いこなすへ
+            </h2>
+            <div class="future-grid">
+                <div class="future-item">
+                    <div class="future-number">6年</div>
+                    <div class="future-label">ぶりの開催</div>
+                </div>
+                <div class="future-item">
+                    <div class="future-number">∞</div>
+                    <div class="future-label">広がる可能性</div>
+                </div>
+                <div class="future-item">
+                    <div class="future-number">1日</div>
+                    <div class="future-label">で変わる未来</div>
+                </div>
+            </div>
+            <p style="font-size: 1.3rem; opacity: 0.8;">
+                開発者も、経営者も、マーケターも。<br>
+                決済に関わるすべての人が、次のステージへ。
+            </p>
+        </div>
+    </section>
+
+    <!-- カウントダウン -->
+    <section class="countdown">
+        <div class="countdown-wrapper">
+            <div class="time-block">
+                <span class="time-value" id="days">--</span>
+                <span class="time-label">Days</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="hours">--</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="minutes">--</span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="seconds">--</span>
+                <span class="time-label">Seconds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-logo">JP_Stripes</div>
+        <div class="footer-info">Stripe User Group Japan</div>
+        <a href="https://jpstripes.com" class="footer-link">jpstripes.com</a>
+    </footer>
+
+    <script>
+        // カスタムカーソル
+        const cursor = document.querySelector('.cursor');
+        const links = document.querySelectorAll('a, .theme-panel, .future-item');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 20 + 'px';
+            cursor.style.top = e.clientY - 20 + 'px';
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // パーティクル生成
+        const particleContainer = document.getElementById('particleContainer');
+        
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            particleContainer.appendChild(particle);
+            
+            particle.animate([
+                { transform: 'translate(0, 0) scale(0)', opacity: 0 },
+                { transform: 'translate(0, -50px) scale(1)', opacity: 1 },
+                { transform: 'translate(0, -100px) scale(0)', opacity: 0 }
+            ], {
+                duration: 3000,
+                easing: 'ease-out'
+            }).onfinish = () => particle.remove();
+        }
+
+        setInterval(createParticle, 200);
+
+        // カウントダウン
+        function updateCountdown() {
+            const eventDate = new Date('2025-11-23T12:00:00+09:00');
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.future-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
