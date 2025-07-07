@@ -34,56 +34,26 @@ export default function Countdown() {
   const formatTime = (time: number) => time.toString().padStart(2, '0');
 
   return (
-    <section className="py-16 bg-primary relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          <div className="text-center">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-2 drop-shadow-lg">
-              {formatTime(timeLeft.days)}
-            </div>
-            <div className="text-sm uppercase tracking-widest opacity-80">
-              Days
-            </div>
-          </div>
-          
-          <div className="text-6xl md:text-7xl font-extralight opacity-50 time-separator">
-            :
-          </div>
-          
-          <div className="text-center">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-2 drop-shadow-lg">
-              {formatTime(timeLeft.hours)}
-            </div>
-            <div className="text-sm uppercase tracking-widest opacity-80">
-              Hours
-            </div>
-          </div>
-          
-          <div className="text-6xl md:text-7xl font-extralight opacity-50 time-separator">
-            :
-          </div>
-          
-          <div className="text-center">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-2 drop-shadow-lg">
-              {formatTime(timeLeft.minutes)}
-            </div>
-            <div className="text-sm uppercase tracking-widest opacity-80">
-              Minutes
-            </div>
-          </div>
-          
-          <div className="text-6xl md:text-7xl font-extralight opacity-50 time-separator">
-            :
-          </div>
-          
-          <div className="text-center">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-2 drop-shadow-lg">
-              {formatTime(timeLeft.seconds)}
-            </div>
-            <div className="text-sm uppercase tracking-widest opacity-80">
-              Seconds
-            </div>
-          </div>
+    <section className="countdown">
+      <div className="countdown-wrapper">
+        <div className="time-block">
+          <span className="time-value">{formatTime(timeLeft.days)}</span>
+          <span className="time-label">Days</span>
+        </div>
+        <span className="time-separator">:</span>
+        <div className="time-block">
+          <span className="time-value">{formatTime(timeLeft.hours)}</span>
+          <span className="time-label">Hours</span>
+        </div>
+        <span className="time-separator">:</span>
+        <div className="time-block">
+          <span className="time-value">{formatTime(timeLeft.minutes)}</span>
+          <span className="time-label">Minutes</span>
+        </div>
+        <span className="time-separator">:</span>
+        <div className="time-block">
+          <span className="time-value">{formatTime(timeLeft.seconds)}</span>
+          <span className="time-label">Seconds</span>
         </div>
       </div>
     </section>

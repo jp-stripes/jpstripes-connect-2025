@@ -34,37 +34,31 @@ export default function Future() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-dark flex items-center justify-center overflow-hidden">
-      {/* パーティクル背景 */}
-      <div ref={particleContainerRef} className="absolute inset-0 pointer-events-none"></div>
+    <section className="future">
+      <div ref={particleContainerRef} className="future-bg"></div>
       
-      <div className="relative z-10 text-center px-8 max-w-6xl mx-auto">
-        <h2 className="text-6xl md:text-8xl lg:text-9xl font-black leading-none mb-12 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">
+      <div className="future-content">
+        <h2 className="future-title">
           使ってるつもり、<br />
           から使いこなすへ
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          {[
-            { number: "6年", label: "ぶりの開催" },
-            { number: "∞", label: "広がる可能性" },
-            { number: "1日", label: "で変わる未来" }
-          ].map((item, index) => (
-            <div 
-              key={index}
-              className="future-item relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:transform hover:-translate-y-4 hover:bg-white/10 hover:shadow-2xl hover:shadow-primary/30"
-            >
-              <div className="text-6xl font-black text-primary mb-2">
-                {item.number}
-              </div>
-              <div className="text-lg opacity-80">
-                {item.label}
-              </div>
-            </div>
-          ))}
+        <div className="future-grid">
+          <div className="future-item">
+            <div className="future-number">6年</div>
+            <div className="future-label">ぶりの開催</div>
+          </div>
+          <div className="future-item">
+            <div className="future-number">∞</div>
+            <div className="future-label">広がる可能性</div>
+          </div>
+          <div className="future-item">
+            <div className="future-number">1日</div>
+            <div className="future-label">で変わる未来</div>
+          </div>
         </div>
         
-        <p className="text-xl md:text-2xl opacity-80 leading-relaxed">
+        <p style={{ fontSize: '1.3rem', opacity: 0.8 }}>
           開発者も、経営者も、マーケターも。<br />
           決済に関わるすべての人が、次のステージへ。
         </p>
