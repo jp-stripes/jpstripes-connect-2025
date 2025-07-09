@@ -1,9 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-
 export default function Themes() {
-  const [hoveredPanel, setHoveredPanel] = useState<number | null>(null);
 
   return (
     <section className="themes">
@@ -15,8 +10,6 @@ export default function Themes() {
         <div className="themes-grid">
           <div 
             className="theme-panel"
-            onMouseEnter={() => setHoveredPanel(0)}
-            onMouseLeave={() => setHoveredPanel(null)}
           >
             <div className="theme-content">
               <div className="theme-header">
@@ -35,8 +28,6 @@ export default function Themes() {
 
           <div 
             className="theme-panel"
-            onMouseEnter={() => setHoveredPanel(1)}
-            onMouseLeave={() => setHoveredPanel(null)}
           >
             <div className="theme-content">
               <div className="theme-header">
@@ -59,8 +50,6 @@ export default function Themes() {
 
           <div 
             className="theme-panel"
-            onMouseEnter={() => setHoveredPanel(2)}
-            onMouseLeave={() => setHoveredPanel(null)}
           >
             <div className="theme-content">
               <div className="theme-header">
