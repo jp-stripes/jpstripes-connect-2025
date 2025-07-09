@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="catchphrase">今さら聞けないを、<br />今こそ聞ける</div>
         </div>
         
-        <a href="#" className="cta-button">詳細は近日公開</a>
+        <a href="https://jpstripes.connpass.com/" className="cta-button" target="_blank" rel="noopener noreferrer">Connpassに登録してイベントのお知らせを受け取る</a>
       </div>
     </section>
   );
