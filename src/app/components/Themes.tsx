@@ -4,7 +4,7 @@ export default function Themes() {
     <section className="themes">
       <div className="themes-header">
         <h2 className="themes-title">理論と実践、そして未来</h2>
-        <p className="themes-subtitle">Stripeで実現する、次世代の決済体験</p>
+        <p className="themes-subtitle">Stripeを使いこなす仲間と、知恵と経験を持ち寄る1日</p>
       </div>
       <div className="themes-container">
         <div className="themes-grid">

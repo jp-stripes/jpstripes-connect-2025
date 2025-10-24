@@ -37,12 +37,16 @@ export default function Hero() {
           </div>
         </div>
         
-        <p className="tagline">理論と実践、そして未来</p>
+        <p className="tagline">Stripeを使いこなす仲間と、知恵と経験を持ち寄る1日</p>
         
         <div className="hero-info">
           <div className="info-item">
             <div className="info-label">Date</div>
             <div className="info-value">2025.11.23 Sun</div>
+          </div>
+          <div className="info-item">
+            <div className="info-label">Time</div>
+            <div className="info-value">12:30 - 18:00</div>
           </div>
           <div className="info-item">
             <div className="info-label">Location</div>
@@ -54,7 +58,7 @@ export default function Hero() {
           <div className="catchphrase">今さら聞けないを、<br />今こそ聞ける</div>
         </div>
         
-        <a href="https://jpstripes.connpass.com/" className="cta-button" target="_blank" rel="noopener noreferrer">Connpassに登録してイベントのお知らせを受け取る</a>
+        <a href="https://jpstripes.connpass.com/event/365652/" className="cta-button" target="_blank" rel="noopener noreferrer">Connpassで参加登録する</a>
       </div>
     </section>
   );

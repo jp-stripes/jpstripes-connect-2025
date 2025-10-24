@@ -764,6 +764,277 @@ body {
   width: 100%;
 }
 
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-hashtag {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-top: 1rem;
+}
+
+/* Venueセクション */
+.venue {
+  padding: 8rem 2rem;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.venue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 91, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.venue-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.venue-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(180deg, #fff 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.venue-info {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.venue-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-light);
+}
+
+.venue-address {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.venue-access {
+  margin-bottom: 3rem;
+}
+
+.access-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-light);
+}
+
+.access-list {
+  list-style: none;
+  padding: 0;
+}
+
+.access-list li {
+  font-size: 1rem;
+  line-height: 2;
+  opacity: 0.7;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.access-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.venue-link {
+  display: inline-block;
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--primary-light);
+}
+
+.venue-link:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Sponsorsセクション */
+.sponsors {
+  padding: 8rem 2rem;
+  background: var(--dark);
+  position: relative;
+}
+
+.sponsors-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sponsors-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(180deg, #fff 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sponsors-section {
+  margin-bottom: 4rem;
+}
+
+.sponsor-category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-light);
+}
+
+.sponsor-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.sponsor-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.sponsor-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(99, 91, 255, 0.2);
+}
+
+.sponsor-item.special {
+  background: rgba(99, 91, 255, 0.1);
+  border-color: var(--primary);
+}
+
+.sponsor-logo {
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.sponsor-item:hover .sponsor-logo {
+  opacity: 1;
+}
+
+/* Partyセクション */
+.party {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(15, 15, 15, 1) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.party-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.party-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, var(--primary) 30%, var(--primary-light) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.party-info {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem;
+}
+
+.party-details {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.party-detail-item {
+  text-align: center;
+}
+
+.party-detail-label {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.party-detail-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.party-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.party-note {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.party-note p {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   .cursor {
@@ -908,23 +1179,62 @@ body {
   .time-separator {
     font-size: 2rem;
   }
-}
 
-/* モバイル対応 */
-@media (max-width: 768px) {
-  .cursor {
-    display: none;
+  .venue {
+    padding: 4rem 1rem;
   }
 
-  body {
-    cursor: default;
+  .venue-info {
+    padding: 2rem;
   }
 
-  .theme-visual-grid::before {
-    box-shadow: 0 -30px 0 var(--primary), 0 30px 0 var(--primary);
+  .venue-name {
+    font-size: 1.5rem;
   }
 
-  .theme-visual-grid::after {
-    box-shadow: -30px 0 0 var(--primary), 30px 0 0 var(--primary);
+  .venue-address {
+    font-size: 1rem;
+  }
+
+  .sponsors {
+    padding: 4rem 1rem;
+  }
+
+  .sponsor-list {
+    gap: 2rem;
+  }
+
+  .sponsor-item {
+    padding: 1.5rem;
+  }
+
+  .sponsor-logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .party {
+    padding: 4rem 1rem;
+  }
+
+  .party-info {
+    padding: 2rem;
+  }
+
+  .party-details {
+    gap: 2rem;
+  }
+
+  .party-detail-value {
+    font-size: 1.5rem;
+  }
+
+  .party-description {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

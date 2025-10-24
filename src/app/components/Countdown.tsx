@@ -12,7 +12,7 @@ export default function Countdown() {
 
   useEffect(() => {
     const updateCountdown = () => {
-      const eventDate = new Date('2025-11-23T12:00:00+09:00');
+      const eventDate = new Date('2025-11-23T12:30:00+09:00');
       const now = new Date();
       const diff = eventDate.getTime() - now.getTime();
 
