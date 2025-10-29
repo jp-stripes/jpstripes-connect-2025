@@ -952,8 +952,10 @@ body {
 
 .sponsor-logo {
   object-fit: contain;
-  filter: brightness(0) invert(1);
   opacity: 0.9;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 4px;
 }
 
 .sponsor-item:hover .sponsor-logo {
