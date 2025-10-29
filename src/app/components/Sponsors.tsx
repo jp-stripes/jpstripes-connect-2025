@@ -20,6 +20,20 @@ export default function Sponsors() {
             </div>
           </div>
         </div>
+        <div className="sponsors-section">
+          <h3 className="sponsor-category">ゴールドスポンサー</h3>
+          <div className="sponsor-list">
+            <div className="sponsor-item special">
+              <Image
+                src="/sponsors/sios.png"
+                alt="sios"
+                width={200}
+                height={80}
+                className="sponsor-logo"
+              />
+            </div>
+          </div>
+        </div>
         
         <div className="sponsors-section">
           <h3 className="sponsor-category">スポンサー</h3>
@@ -42,6 +56,15 @@ export default function Sponsors() {
                 className="sponsor-logo"
               />
             </div>
+            <div className="sponsor-item">
+              <Image
+                src="/sponsors/anti-pattern.png"
+                alt="anti-pattern"
+                width={180}
+                height={80}
+                className="sponsor-logo"
+              />
+            </div>
           </div>
         </div>
         
@@ -52,6 +75,20 @@ export default function Sponsors() {
               <Image
                 src="/sponsors/Nulab_logo.png"
                 alt="nulab"
+                width={180}
+                height={80}
+                className="sponsor-logo"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="sponsors-section">
+          <h3 className="sponsor-category">会場スポンサー</h3>
+          <div className="sponsor-list">
+            <div className="sponsor-item">
+              <Image
+                src="/sponsors/coWorkingLogo_M.png"
+                alt="Tech Hub Yokohama"
                 width={180}
                 height={80}
                 className="sponsor-logo"
