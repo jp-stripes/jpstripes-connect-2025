@@ -101,6 +101,22 @@ export default function Sponsors() {
                 />
               </Link>
             </div>
+            <div className="sponsor-item">
+              <Link
+                href="https://spectrumtokyo.com/jp/"
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="sponsor-link"
+              >
+                <Image
+                  src="/sponsors/spectrum-tokyo.jpeg"
+                  alt="Spectrum Tokyo"
+                  width={180}
+                  height={80}
+                  className="sponsor-logo"
+                />
+              </Link>
+            </div>
           </div>
         </div>
         
