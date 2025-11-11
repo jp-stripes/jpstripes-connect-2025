@@ -962,6 +962,96 @@ body {
   opacity: 1;
 }
 
+/* Speakersセクション */
+.speakers {
+  padding: 8rem 2rem;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.speakers::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 91, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(99, 91, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.speakers-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.speakers-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(180deg, #fff 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.speaker-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.speaker-item:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(99, 91, 255, 0.3);
+  border-color: var(--primary);
+}
+
+.speaker-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.speaker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.speaker-item:hover .speaker-image {
+  transform: scale(1.05);
+}
+
+.speaker-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-top: 0.5rem;
+}
+
 /* Timetableセクション */
 .timetable {
   padding: 8rem 2rem;
@@ -1340,6 +1430,23 @@ body {
   .sponsor-logo {
     width: 120px;
     height: auto;
+  }
+
+  .speakers {
+    padding: 4rem 1rem;
+  }
+
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .speaker-item {
+    padding: 1rem;
+  }
+
+  .speaker-name {
+    font-size: 0.95rem;
   }
 
   .party {
