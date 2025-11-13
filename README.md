@@ -1,188 +1,190 @@
 # JP_Stripes Connect 2025
 
-A modern conference website for **JP_Stripes Connect 2025** - a Japanese Stripe developer conference featuring cutting-edge payment technology discussions and innovations.
+**JP_Stripes Connect 2025** - 日本のStripe開発者向けカンファレンスの公式ウェブサイト。最先端の決済技術とイノベーションについて議論します。
 
-## 🎯 Project Overview
+## 🎯 プロジェクト概要
 
-JP_Stripes Connect 2025 is a single-page conference website built with Next.js 15, featuring:
+JP_Stripes Connect 2025は、Next.js 15で構築されたシングルページのカンファレンスウェブサイトです。
 
-- **Dark-themed interactive design** with custom cursor effects
-- **Three core themes**: Theory (理論), Practice (実践), and Future (未来)
-- **Japanese-first localization** with SEO optimization
-- **Responsive layout** optimized for all devices
-- **Event countdown timer** and dynamic content sections
-- **Cloudflare Workers deployment** for edge performance
+主な特徴：
 
-## 🚀 Tech Stack
+- **ダークテーマのインタラクティブデザイン** - カスタムカーソルエフェクト搭載
+- **3つのコアテーマ**: 理論、実践、未来
+- **日本語ファーストのローカライゼーション** - SEO最適化済み
+- **レスポンシブレイアウト** - 全デバイスに最適化
+- **イベントカウントダウンタイマー** - 動的コンテンツセクション
+- **Cloudflare Workers デプロイメント** - エッジパフォーマンス
 
-- **[Next.js 15](https://nextjs.org)** - React framework with App Router
-- **[React 19](https://react.dev)** - UI library
-- **[TypeScript](https://www.typescriptlang.org)** - Type-safe development
-- **[Tailwind CSS 4](https://tailwindcss.com)** - Utility-first styling
-- **[Cloudflare Workers](https://workers.cloudflare.com)** - Edge deployment
-- **[@opennextjs/cloudflare](https://opennext.js.org/cloudflare)** - Next.js adapter for Cloudflare
-- **Inter Font** - Optimized via next/font
+## 🚀 技術スタック
 
-## 📦 Getting Started
+- **[Next.js 15](https://nextjs.org)** - App Routerを使用したReactフレームワーク
+- **[React 19](https://react.dev)** - UIライブラリ
+- **[TypeScript](https://www.typescriptlang.org)** - 型安全な開発
+- **[Tailwind CSS 4](https://tailwindcss.com)** - ユーティリティファーストのスタイリング
+- **[Cloudflare Workers](https://workers.cloudflare.com)** - エッジデプロイメント
+- **[@opennextjs/cloudflare](https://opennext.js.org/cloudflare)** - Cloudflare用Next.jsアダプター
+- **Inter Font** - next/fontで最適化
 
-### Prerequisites
+## 📦 はじめに
 
-- Node.js 20.x or higher
-- npm, yarn, pnpm, or bun
+### 前提条件
 
-### Installation
+- Node.js 20.x 以上
+- npm、yarn、pnpm、または bun
+
+### インストール
 
 ```bash
-# Clone the repository
+# リポジトリをクローン
 git clone https://github.com/jp-stripes/jpstripes-connect-2025.git
 cd jpstripes-connect-2025
 
-# Install dependencies
+# 依存関係をインストール
 npm install
 ```
 
-### Development
+### 開発
 
 ```bash
-# Start the development server
+# 開発サーバーを起動
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site in development mode.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いて、開発モードでサイトを表示します。
 
-The page auto-updates as you edit files in the `src/` directory.
+`src/` ディレクトリ内のファイルを編集すると、ページが自動的に更新されます。
 
-### Available Scripts
+### 利用可能なスクリプト
 
-- `npm run dev` - Start development server on http://localhost:3000
-- `npm run build` - Build the application for production
-- `npm run start` - Start production server locally
-- `npm run lint` - Run ESLint for code quality checks
-- `npm run preview` - Build and preview with Wrangler locally
-- `npm run deploy` - Build and deploy to Cloudflare Workers
-- `npm run cf-typegen` - Generate TypeScript types for Cloudflare environment
+- `npm run dev` - 開発サーバーを http://localhost:3000 で起動
+- `npm run build` - 本番用にアプリケーションをビルド
+- `npm run start` - 本番サーバーをローカルで起動
+- `npm run lint` - ESLintでコード品質をチェック
+- `npm run preview` - ビルドしてWranglerでローカルプレビュー
+- `npm run deploy` - ビルドしてCloudflare Workersにデプロイ
+- `npm run cf-typegen` - Cloudflare環境用のTypeScript型を生成
 
-## 📁 Project Structure
+## 📁 プロジェクト構造
 
 ```
 jpstripes-connect-2025/
 ├── src/
 │   └── app/
-│       ├── components/          # React components
-│       │   ├── CustomCursor.tsx # Interactive cursor component
-│       │   ├── Hero.tsx         # Main hero section
-│       │   ├── Themes.tsx       # Three-panel theme section
-│       │   ├── Future.tsx       # Future-focused content
-│       │   ├── Countdown.tsx    # Event countdown timer
-│       │   └── Footer.tsx       # Site footer
-│       ├── layout.tsx           # Root layout with metadata
-│       ├── page.tsx             # Home page composition
-│       └── globals.css          # Global styles with Tailwind
-├── public/                      # Static assets
-├── CLAUDE.md                    # Claude Code project instructions
-├── package.json                 # Dependencies and scripts
-├── tsconfig.json                # TypeScript configuration
-├── tailwind.config.ts           # Tailwind CSS configuration
-├── next.config.ts               # Next.js configuration
-├── wrangler.toml                # Cloudflare Workers configuration
-└── README.md                    # This file
+│       ├── components/          # Reactコンポーネント
+│       │   ├── CustomCursor.tsx # インタラクティブカーソルコンポーネント
+│       │   ├── Hero.tsx         # メインヒーローセクション
+│       │   ├── Themes.tsx       # 3パネルテーマセクション
+│       │   ├── Future.tsx       # 未来志向のコンテンツ
+│       │   ├── Countdown.tsx    # イベントカウントダウンタイマー
+│       │   └── Footer.tsx       # サイトフッター
+│       ├── layout.tsx           # メタデータを含むルートレイアウト
+│       ├── page.tsx             # ホームページ構成
+│       └── globals.css          # Tailwindを使用したグローバルスタイル
+├── public/                      # 静的アセット
+├── CLAUDE.md                    # Claude Codeプロジェクト指示
+├── package.json                 # 依存関係とスクリプト
+├── tsconfig.json                # TypeScript設定
+├── tailwind.config.ts           # Tailwind CSS設定
+├── next.config.ts               # Next.js設定
+├── wrangler.toml                # Cloudflare Workers設定
+└── README.md                    # このファイル
 ```
 
-## 🎨 Key Features
+## 🎨 主な機能
 
-### Interactive Components
+### インタラクティブコンポーネント
 
-- **Custom Cursor**: Smooth, interactive cursor that follows mouse movement
-- **Hero Section**: Eye-catching landing section with conference branding
-- **Three Themes Panel**: Interactive cards showcasing:
-  - 🧠 **Theory (理論)**: Foundational Stripe API knowledge
-  - 💼 **Practice (実践)**: Real-world implementation examples
-  - 🚀 **Future (未来)**: Next-generation payment possibilities
-- **Countdown Timer**: Real-time countdown to the conference date
-- **Responsive Footer**: Contact information and social links
+- **カスタムカーソル**: マウスの動きに追従するスムーズでインタラクティブなカーソル
+- **ヒーローセクション**: カンファレンスブランディングを含む目を引くランディングセクション
+- **3つのテーマパネル**: 以下を紹介するインタラクティブカード
+  - 🧠 **理論**: Stripe APIの基礎知識
+  - 💼 **実践**: 実世界での実装例
+  - 🚀 **未来**: 次世代の決済の可能性
+- **カウントダウンタイマー**: カンファレンス開催日までのリアルタイムカウントダウン
+- **レスポンシブフッター**: 連絡先情報とソーシャルリンク
 
-### Internationalization
+### 国際化
 
-- Primary language: Japanese (日本語)
-- Japanese SEO metadata and Open Graph tags
-- Locale-aware HTML attributes (`lang="ja"`)
-- Optimized Japanese typography with Inter font
+- 主要言語: 日本語
+- 日本語SEOメタデータとOpen Graphタグ
+- ロケール対応HTMLアトリビュート（`lang="ja"`）
+- Interフォントによる日本語タイポグラフィの最適化
 
-### Performance Optimizations
+### パフォーマンス最適化
 
-- Edge deployment via Cloudflare Workers
-- Static asset optimization
-- Automatic font optimization with next/font
-- Server-side rendering with Next.js 15 App Router
-- Tailwind CSS for minimal bundle size
+- Cloudflare Workersによるエッジデプロイメント
+- 静的アセットの最適化
+- next/fontによる自動フォント最適化
+- Next.js 15 App Routerによるサーバーサイドレンダリング
+- 最小限のバンドルサイズのためのTailwind CSS
 
-## 🌐 Deployment
+## 🌐 デプロイメント
 
 ### Cloudflare Workers
 
-This project is configured for deployment to Cloudflare Workers:
+このプロジェクトはCloudflare Workersへのデプロイ用に設定されています：
 
 ```bash
-# Preview the production build locally
+# 本番ビルドをローカルでプレビュー
 npm run preview
 
-# Deploy to Cloudflare Workers
+# Cloudflare Workersにデプロイ
 npm run deploy
 ```
 
-Ensure you have:
-1. Cloudflare account with Workers enabled
-2. Wrangler CLI configured with authentication
-3. `wrangler.toml` properly configured with your account details
+事前に以下を確認してください：
+1. Workersが有効なCloudflareアカウント
+2. 認証設定済みのWrangler CLI
+3. アカウント詳細が正しく設定された `wrangler.toml`
 
-### Alternative Deployments
+### その他のデプロイメントオプション
 
-While optimized for Cloudflare, the site can also be deployed to:
-- **Vercel**: Native Next.js deployment platform
-- **Netlify**: Supports Next.js with adapters
-- **Self-hosted**: Using Docker or traditional Node.js hosting
+Cloudflare向けに最適化されていますが、以下にもデプロイ可能です：
+- **Vercel**: ネイティブNext.jsデプロイメントプラットフォーム
+- **Netlify**: アダプターを使用してNext.jsをサポート
+- **セルフホスティング**: DockerまたはトラディショナルなNode.jsホスティングを使用
 
-## 🛠️ Development Guidelines
+## 🛠️ 開発ガイドライン
 
 ### TypeScript
 
-The project uses TypeScript with strict mode enabled:
+プロジェクトはストリクトモードが有効なTypeScriptを使用しています：
 
 ```typescript
-// Path alias support
+// パスエイリアスのサポート
 import Component from '@/app/components/Component'
 ```
 
-### Styling
+### スタイリング
 
-Tailwind CSS 4 is used throughout the project:
+プロジェクト全体でTailwind CSS 4を使用：
 
-- Follow utility-first approach
-- Dark theme is the default
-- Responsive design utilities for mobile/tablet/desktop
+- ユーティリティファーストアプローチに従う
+- デフォルトはダークテーマ
+- モバイル/タブレット/デスクトップ用レスポンシブデザインユーティリティ
 
-### Component Structure
+### コンポーネント構造
 
-Components follow React best practices:
-- Functional components with TypeScript
-- Client components marked with `'use client'` directive
-- Server components by default (App Router)
+コンポーネントはReactのベストプラクティスに従っています：
+- TypeScriptを使用した関数コンポーネント
+- `'use client'` ディレクティブでマークされたクライアントコンポーネント
+- デフォルトはサーバーコンポーネント（App Router）
 
-## 📄 License
+## 📄 ライセンス
 
-Private repository. All rights reserved.
+プライベートリポジトリ。全著作権所有。
 
-## 🤝 Contributing
+## 🤝 コントリビューション
 
-This is a conference website project. For contributions or questions, please contact the project maintainers.
+これはカンファレンスウェブサイトプロジェクトです。コントリビューションやご質問については、プロジェクトメンテナーにお問い合わせください。
 
-## 📞 Support
+## 📞 サポート
 
-For issues or questions about JP_Stripes Connect 2025:
-- Visit the conference website (when deployed)
-- Contact the organizing team
-- Check the conference social media channels
+JP_Stripes Connect 2025に関する問題や質問：
+- カンファレンスウェブサイトをご覧ください（デプロイ後）
+- 運営チームにお問い合わせください
+- カンファレンスのソーシャルメディアチャンネルをご確認ください
 
 ---
 
-Built with ❤️ for the Japanese Stripe developer community
+日本のStripe開発者コミュニティのために ❤️ を込めて構築
