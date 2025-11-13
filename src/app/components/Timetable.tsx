@@ -12,10 +12,10 @@ export default function Timetable() {
     { time: '14:10', title: 'スポンサーLT', speaker: '', sponsor: true },
     { time: '14:20', title: '休憩', speaker: '', break: true },
     { time: '14:30', title: '浦島太郎にならないための、Stripe最新動向キャッチアップ', speaker: 'Stripe プロフェッショナルサービスチーム 齊藤 光正さん', placeholder: false },
-    { 
-      time: '15:10', 
-      title: '(仮) Stripeでビジネスの解像度を高めるための取り組みについて', 
-      speaker: '株式会社Helpfeel 秋山さん / Studio, Inc 八木さん' 
+    {
+      time: '15:10',
+      title: 'SaaSのビジネス・顧客解像度を高めるためのRevOpsへの挑戦',
+      speaker: '株式会社Helpfeel 秋山さん / Studio, Inc 八木さん'
     },
     { time: '15:50', title: 'スポンサーLT', speaker: '', sponsor: true },
     { time: '16:00', title: '休憩', speaker: '', break: true },
