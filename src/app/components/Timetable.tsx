@@ -45,7 +45,7 @@ export default function Timetable() {
           {sessions.map((session, index) => (
             <div 
               key={index} 
-              className={`timetable-item ${session.keynote ? 'keynote' : ''} ${session.break ? 'break' : ''} ${session.sponsor ? 'sponsor' : ''} ${session.lt ? 'lt' : ''} ${session.party ? 'party' : ''} ${session.placeholder ? 'placeholder' : ''}`}
+              className={`timetable-item ${session.keynote ? 'keynote' : ''} ${session.break ? 'break' : ''} ${session.sponsor ? 'sponsor' : ''} ${session.lt ? 'lt' : ''} ${session.party ? 'party' : ''}`}
             >
               <div className="session-time">{session.time}</div>
               <div className="session-content">
