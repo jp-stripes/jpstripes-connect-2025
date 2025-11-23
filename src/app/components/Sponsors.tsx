@@ -117,6 +117,22 @@ export default function Sponsors() {
                 />
               </Link>
             </div>
+            <div className="sponsor-item">
+              <Link
+                href="https://www.designium.jp/"
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="sponsor-link"
+              >
+                <Image
+                  src="/sponsors/designium.png"
+                  alt="株式会社デザイニウム"
+                  width={180}
+                  height={80}
+                  className="sponsor-logo"
+                />
+              </Link>
+            </div>
           </div>
         </div>
         
