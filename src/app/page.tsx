@@ -2,6 +2,7 @@ import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import Themes from './components/Themes';
 import Future from './components/Future';
+import Archive from './components/Archive';
 import Timetable from './components/Timetable';
 import Speakers from './components/Speakers';
 import Venue from './components/Venue';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Themes />
       <Future />
+      <Archive />
       <Timetable />
       <Speakers />
       <Venue />

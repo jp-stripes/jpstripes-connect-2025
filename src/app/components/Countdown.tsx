@@ -1,61 +1,35 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+const PLAYLIST_ID = 'PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0';
+const FIRST_VIDEO_ID = 'pfau5P1NW3c';
+const PLAYLIST_WATCH_URL = `https://www.youtube.com/watch?v=${FIRST_VIDEO_ID}&list=${PLAYLIST_ID}`;
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const updateCountdown = () => {
-      const eventDate = new Date('2025-11-23T12:30:00+09:00');
-      const now = new Date();
-      const diff = eventDate.getTime() - now.getTime();
-
-      if (diff > 0) {
-        setTimeLeft({
-          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((diff % (1000 * 60)) / 1000),
-        });
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const formatTime = (time: number) => time.toString().padStart(2, '0');
-
   return (
-    <section className="countdown">
-      <div className="countdown-wrapper">
-        <div className="time-block">
-          <span className="time-value">{formatTime(timeLeft.days)}</span>
-          <span className="time-label">Days</span>
-        </div>
-        <span className="time-separator">:</span>
-        <div className="time-block">
-          <span className="time-value">{formatTime(timeLeft.hours)}</span>
-          <span className="time-label">Hours</span>
-        </div>
-        <span className="time-separator">:</span>
-        <div className="time-block">
-          <span className="time-value">{formatTime(timeLeft.minutes)}</span>
-          <span className="time-label">Minutes</span>
-        </div>
-        <span className="time-separator">:</span>
-        <div className="time-block">
-          <span className="time-value">{formatTime(timeLeft.seconds)}</span>
-          <span className="time-label">Seconds</span>
+    <section className="post-event">
+      <div className="post-event-wrapper">
+        <span className="post-event-eyebrow">Thank you!</span>
+        <h2 className="post-event-title">
+          JP_Stripes Connect 2025 は<br />
+          無事に閉幕しました。
+        </h2>
+        <p className="post-event-lead">
+          会場でご一緒したみなさま、登壇者のみなさま、スポンサーのみなさま、
+          <br />
+          そしてオンラインから応援してくれたみなさま、本当にありがとうございました。
+        </p>
+        <div className="post-event-actions">
+          <a href="#archive" className="post-event-cta">
+            アーカイブを視聴する
+          </a>
+          <a
+            href={PLAYLIST_WATCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="post-event-cta post-event-cta--ghost"
+          >
+            YouTube で開く ↗
+          </a>
         </div>
       </div>
     </section>
   );
-} 
+}

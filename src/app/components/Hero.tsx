@@ -16,15 +16,15 @@ export default function Hero() {
       </div>
       
       <div className="hero-content">
-        <div className="date-ticker">2025.11.23</div>
-        
+        <div className="date-ticker">2025.11.23 — 開催終了</div>
+
         {/* ロゴアイコンとタイトル */}
         <div className="logo-title-container">
           <div className="logo-circle">
-            <Image 
-              src="/jpstripes-zebra.png" 
-              alt="JP_Stripes Logo" 
-              width={120} 
+            <Image
+              src="/jpstripes-zebra.png"
+              alt="JP_Stripes Logo"
+              width={120}
               height={120}
               className="zebra-logo"
             />
@@ -36,9 +36,9 @@ export default function Hero() {
             </h1>
           </div>
         </div>
-        
+
         <p className="tagline">Stripeを使いこなす仲間と、知恵と経験を持ち寄る1日</p>
-        
+
         <div className="hero-info">
           <div className="info-item">
             <div className="info-label">Date</div>
@@ -53,12 +53,24 @@ export default function Hero() {
             <div className="info-value">Yokohama</div>
           </div>
         </div>
-        
+
         <div className="hero-tagline">
           <div className="catchphrase">今さら聞けないを、<br />今こそ聞ける</div>
         </div>
-        
-        <a href="https://jpstripes.connpass.com/event/365652/" className="cta-button" target="_blank" rel="noopener noreferrer">Connpassで参加登録する</a>
+
+        <div className="hero-cta-group">
+          <a href="#archive" className="cta-button">
+            アーカイブを視聴する
+          </a>
+          <a
+            href="https://jpstripes.connpass.com/event/365652/"
+            className="cta-button cta-button--ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            開催レポート (Connpass)
+          </a>
+        </div>
       </div>
     </section>
   );

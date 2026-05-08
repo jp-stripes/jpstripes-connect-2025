@@ -4,15 +4,15 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://connect2025.jpstripes.com";
 
 export const metadata: Metadata = {
-  title: "JP_Stripes Connect 2025 - 理論と実践、そして未来",
-  description: "JP_Stripes Connect 2025 - 理論と実践、そして未来。今さら聞けないを、今こそ聞ける。",
-  keywords: ["Stripe", "決済", "フィンテック", "開発", "エンジニア", "カンファレンス"],
+  title: "JP_Stripes Connect 2025 - アーカイブ公開中 | 理論と実践、そして未来",
+  description: "JP_Stripes Connect 2025 のセッション映像アーカイブを YouTube プレイリストで公開中。理論と実践、そして未来 — 今さら聞けないを、今こそ聞ける。",
+  keywords: ["Stripe", "決済", "フィンテック", "開発", "エンジニア", "カンファレンス", "アーカイブ", "YouTube", "JP_Stripes"],
   authors: [{ name: "JP_Stripes" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
-    title: "JP_Stripes Connect 2025 - 理論と実践、そして未来",
-    description: "JP_Stripes Connect 2025 - 理論と実践、そして未来。今さら聞けないを、今こそ聞ける。",
+    title: "JP_Stripes Connect 2025 - アーカイブ公開中",
+    description: "JP_Stripes Connect 2025 のセッション映像アーカイブを YouTube プレイリストで公開中。理論と実践、そして未来。",
     type: "website",
     locale: "ja_JP",
     siteName: "JP_Stripes Connect 2025",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JP_Stripes Connect 2025 - 理論と実践、そして未来",
-    description: "JP_Stripes Connect 2025 - 理論と実践、そして未来。今さら聞けないを、今こそ聞ける。",
+    title: "JP_Stripes Connect 2025 - アーカイブ公開中",
+    description: "JP_Stripes Connect 2025 のセッション映像アーカイブを YouTube プレイリストで公開中。理論と実践、そして未来。",
     images: [`${siteUrl}/og-image.png`],
   },
 };
@@ -48,6 +48,15 @@ export default function RootLayout({
     "startDate": "2025-11-23T12:30:00+09:00",
     "endDate": "2025-11-23T18:00:00+09:00",
     "eventStatus": "https://schema.org/EventScheduled",
+    "recordedIn": {
+      "@type": "VideoObject",
+      "name": "JP_Stripes Connect 2025 セッションアーカイブ",
+      "description": "JP_Stripes Connect 2025 の全セッションアーカイブを収録した YouTube プレイリスト",
+      "uploadDate": "2026-05-08",
+      "url": "https://www.youtube.com/playlist?list=PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0",
+      "embedUrl": "https://www.youtube.com/embed/videoseries?list=PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0",
+      "thumbnailUrl": `${siteUrl}/og-image.png`
+    },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
       "@type": "Place",
