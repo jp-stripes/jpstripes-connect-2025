@@ -48,14 +48,10 @@ export default function RootLayout({
     "startDate": "2025-11-23T12:30:00+09:00",
     "endDate": "2025-11-23T18:00:00+09:00",
     "eventStatus": "https://schema.org/EventScheduled",
-    "recordedIn": {
-      "@type": "VideoObject",
+    "workFeatured": {
+      "@type": "CreativeWorkSeries",
       "name": "JP_Stripes Connect 2025 セッションアーカイブ",
-      "description": "JP_Stripes Connect 2025 の全セッションアーカイブを収録した YouTube プレイリスト",
-      "uploadDate": "2026-05-08",
-      "url": "https://www.youtube.com/playlist?list=PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0",
-      "embedUrl": "https://www.youtube.com/embed/videoseries?list=PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0",
-      "thumbnailUrl": `${siteUrl}/og-image.png`
+      "url": "https://www.youtube.com/playlist?list=PLr8gucIRpGCH9HRuWLCAgIjiNyWUQBpO0"
     },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
