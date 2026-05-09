@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Themes from './components/Themes';
 import Future from './components/Future';
 import Timetable from './components/Timetable';
+import Archive from './components/Archive';
 import Speakers from './components/Speakers';
 import Venue from './components/Venue';
 import Sponsors from './components/Sponsors';
@@ -18,6 +19,7 @@ export default function Home() {
       <Themes />
       <Future />
       <Timetable />
+      <Archive />
       <Speakers />
       <Venue />
       <Sponsors />
